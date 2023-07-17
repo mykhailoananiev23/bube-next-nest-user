@@ -123,7 +123,7 @@ export const MainFooter = () => {
               <Link href="#">
                 <p className="text-[#8B939A] text-[0.8rem] mt-2">
                   <i className="fa-regular fa-envelope text-[#0071BC] mr-2"></i>
-                  info@bube.com
+                  www@example.com
                 </p>
               </Link>
               <Link href="#">

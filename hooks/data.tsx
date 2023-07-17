@@ -276,7 +276,7 @@ export const seller = [
 export const userReferrals = [
   {
     id: 1,
-    user: "bube",
+    user: "Tester",
     dateRegistered: "05-Aug-2015",
     completedContracts: "2",
     profit: 200,
