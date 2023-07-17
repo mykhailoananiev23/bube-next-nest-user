@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
-import Logo from "../../assets/logo.svg";
+// import Logo from "../../assets/logo.svg";
 
 export default function PrimaryMenu() {
   const [state, setState] = useState(false);
@@ -18,11 +18,12 @@ export default function PrimaryMenu() {
       <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
           <a href="javascript:void(0)">
-            <Image
+            LOGO
+            {/* <Image
               src={Logo}
               className="w-3/4 h-auto object-center m-auto"
               alt={"Bube"}
-            />
+            /> */}
           </a>
           <div className="md:hidden">
             <button

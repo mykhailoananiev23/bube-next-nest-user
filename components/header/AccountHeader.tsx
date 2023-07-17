@@ -1,7 +1,7 @@
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-import logo from "../../public/logo.svg";
+// import logo from "../../public/logo.svg";
 import { useRouter } from "next/router";
 import {
   ChevronDownIcon,
@@ -96,7 +96,8 @@ export const AccountHeader = () => {
           <div className="flex justify-between items-center">
             <Link href={session && session ? "/buyers" : "/"}>
               <div className="w-[10rem]">
-                <Image src={logo} alt="logo" />
+                LOGO
+                {/* <Image src={logo} alt="logo" /> */}
               </div>
             </Link>
             <div className="relative w-full px-2">

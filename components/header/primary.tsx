@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-import Logo from "../../assets/logo.svg";
+// import Logo from "../../assets/logo.svg";
 import SearchBox from "../searchbox";
 
 export default function PrimaryHeader() {
@@ -23,11 +23,12 @@ export default function PrimaryHeader() {
             <div className="flex">
               <Link href="/">
                 <a className="w-[10rem]">
-                  <Image
+                  LOGO
+                  {/* <Image
                     src={Logo}
                     className="w-3/4 h-auto object-center m-auto"
                     alt={"Bube"}
-                  />
+                  /> */}
                 </a>
               </Link>
               <SearchBox />
