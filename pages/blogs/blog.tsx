@@ -59,7 +59,7 @@ const Blog: NextPageWithLayout = () => {
           {
             title:data?.title,
             date: formattedDate(data?.createdAt),
-            author: 'Bube Team',
+            author: 'Upward Team',
             // category: data?.blogtag[0].name,
             content:data?.description,
           }

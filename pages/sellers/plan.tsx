@@ -15,7 +15,7 @@ const plan: NextPageWithLayout = () => {
           About <strong>Primium Plans</strong>
         </h2>
         <p className="md:text-[30px] max-[639px]:text-[15px] max-[639px]:text-center">
-          Premium Accounts Offer Exclusive Benifits For Bube Users
+          Premium Accounts Offer Exclusive Benifits For Upward Users
         </p>
         <div className="flex-column sm:flex sm:justify-center"></div>
       </div>
@@ -50,7 +50,7 @@ const plan: NextPageWithLayout = () => {
               </div>
               <div className="space-y-[12px]">
                 <div className="text-[#050931] text-[20px] font-[600] leading-[25px] tracking-[0.2] capitalize">referral Bonus</div>
-                <div className="text-[#8B939A] text-[15px] font-[500] leading-[25px] tracking-[0.15px] capitalize">Referral bonuses for introducing new users to Bube</div>
+                <div className="text-[#8B939A] text-[15px] font-[500] leading-[25px] tracking-[0.15px] capitalize">Referral bonuses for introducing new users to Upward</div>
               </div>
             </div>
           </div>

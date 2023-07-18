@@ -64,7 +64,7 @@ export const Hero = () => {
                 New
               </a>
               <p className="text-[#363636] text-[0.8rem] lg:text-[0.9rem] leading-10 ml-2 overflow-hidden">
-                stay connected to get upcoming job with Bube
+                stay connected to get upcoming job with us
               </p>
             </div>
             <div className="text-[#050931] mt-6 md:mt-12">

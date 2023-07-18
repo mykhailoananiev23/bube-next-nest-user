@@ -22,7 +22,7 @@ export const MainFooter = () => {
                 {/* <>
                   <Image
                     src={Logo}
-                    alt={"Bube"}
+                    alt={"Upward"}
                     width={175}
                   />
                 </> */}
@@ -58,7 +58,7 @@ export const MainFooter = () => {
               </Link>
               <Link href="#">
                 <a>
-                  <p className="text-[#8B939A] text-[0.8rem] mt-2">Why Bube</p>
+                  <p className="text-[#8B939A] text-[0.8rem] mt-2">Why</p>
                 </a>
               </Link>
               <Link href="#">

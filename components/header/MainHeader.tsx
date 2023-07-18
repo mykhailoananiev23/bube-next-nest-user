@@ -37,7 +37,7 @@ export const MainHeader = () => {
                 {/* <Image
                   src={Logo}
                   className="w-3/4 h-auto object-center m-auto"
-                  alt={"Bube"}
+                  alt={"Upward"}
                 /> */}
               </a>
             </Link>
@@ -87,7 +87,7 @@ export const MainHeader = () => {
               href="#"
               className="text-center p-2 lg:px-4 md:mx-2 text-[#363636] rounded"
             >
-              Why<span className="invisible">_</span>Bube
+              Why
             </a>
             <a
               href="#"
@@ -132,7 +132,7 @@ export const MainHeader = () => {
               Find<span className="invisible">_</span>Work
             </a>
             <a href="#" className="p-2 lg:px-4 md:mx-2 text-[#363636] rounded">
-              Why<span className="invisible">_</span>Bube
+              Why
             </a>
             <a
               href="#"

@@ -9,10 +9,10 @@ export const Hero = () => {
       >
         <div className="pt-20 ">
           <h1 className="capitalize  font-extrabold text-5xl">
-            behind Bubes New B2b campaing:team 2022
+            behind Upward New B2b campaing:team 2022
           </h1>
           <div className="flex justify-center	 my-5">
-            <h5>By Bube Team</h5>
+            <h5>By Upward Team</h5>
             <div className="border-l-2 border-l-white mx-2"></div>
             <h5>Jan 4 2022</h5>
           </div>

@@ -22,7 +22,7 @@ export default function PrimaryMenu() {
             {/* <Image
               src={Logo}
               className="w-3/4 h-auto object-center m-auto"
-              alt={"Bube"}
+              alt={"Upward"}
             /> */}
           </a>
           <div className="md:hidden">

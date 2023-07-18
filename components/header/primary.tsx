@@ -27,7 +27,7 @@ export default function PrimaryHeader() {
                   {/* <Image
                     src={Logo}
                     className="w-3/4 h-auto object-center m-auto"
-                    alt={"Bube"}
+                    alt={"Upward"}
                   /> */}
                 </a>
               </Link>

@@ -128,16 +128,6 @@ export const skills = [
 
 export const posts = [
   {
-    title:
-      "Freelancers: how to raise your rates and ask for more money from clients",
-    desc: "Going into this journey, I had a standard therapy regimen, based on looking at the research literature. After I saw the movie, I started to ask otherAccording to him, â€œI'm still surprised that this has happened. According to him, â€œI'm still surprised that this has happened. But we are surprised because we  But we are surprised because we  people what they did for their anxiety, and some Going into this journey, I had a standard therapy regimen, based on looking at the research literature. After I saw the movie, I started Going into this journey, I had a standard therapy regimen, based on looking at the research literature. After I saw the movie, I started Going into this journey, I had a standard therapy regimen, based on looking at the research literature. After I saw the movie, I started Going into this journey, I had a standard therapy regimen, based on looking at the research literature. After I saw the movie, I started Going into this journey, I had a standard therapy regimen, based on looking at the research literature. After I saw the movie, I started",
-    img: "",
-    authorLogo: "https://api.uifaces.co/our-content/donated/xZ4wg2Xj.jpg",
-    authorName: "Sidi dev",
-    date: "Jan 4 2022",
-    user: "Bube Team",
-  },
-  {
     title: "A Quick Guide to WordPress Hosting",
     desc: "According to him, â€œI'm still surprised that this has happened. But we are surprised because we are so surprised.â€More revelations about Whittington will be featured in the film",
     img: "https://images.unsplash.com/photo-1620287341056-49a2f1ab2fdc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
@@ -336,13 +326,6 @@ export const gigs = [
 ];
 
 export const workExperience = [
-  {
-    id: 1,
-    title: "Bube App",
-    category: "UI UX Designer",
-    startDate: "Jan 2019",
-    endDate: "Dec 2022",
-  },
   {
     id: 2,
     title: "Maxima Code",

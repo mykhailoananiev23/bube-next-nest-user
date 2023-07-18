@@ -50,7 +50,7 @@ export default function Referrals() {
             <div>
               <p>
                 Invite Your Friends And Colleagues To Buy A Gig And Receive 50%
-                Of The Commission Free Paid To Bube. To Invite A User To
+                Of The Commission Free Paid To Upward. To Invite A User To
                 Purchase Accept A Regular Job, Simply Copy The Link And Send It
                 To Them.
               </p>
@@ -72,7 +72,7 @@ export default function Referrals() {
                 Referral Link
               </h2>
               <p className="my-4">
-                s Use The Referral Link To Invite Your Friends To Bube And Earn
+                s Use The Referral Link To Invite Your Friends To Upward And Earn
                 Referral Bonuses.
               </p>
               <div className="flex-column justify-center w-full">

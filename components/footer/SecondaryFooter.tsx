@@ -12,7 +12,7 @@ export const SecondaryFooter = () => {
       <div className="flex items-center">
         <div className="flex-auto w-[50%] my-5">
           <p className="text-[#8B939A] text-[0.8rem] ml-2">
-            Copyright © 2022 Bube App. All Rights Reserved
+            Copyright © 2022 App. All Rights Reserved
           </p>
         </div>
         <Menu as="div" className="relative inline-block text-left">

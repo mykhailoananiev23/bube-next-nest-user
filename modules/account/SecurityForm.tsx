@@ -43,7 +43,7 @@ export default function SecurityForm() {
         </h3>
         <div className="flex flex-col gap-2 md:flex-row lg:w-[66%]">
           <p className="text-neutral-500">
-            Your phone is verified with Bube. Click edit to change your phone
+            Your phone is verified. Click edit to change your phone
             number.
           </p>
           <button className="py-2 px-8 font-bold text-lg text-white bg-primary rounded-full lg:h-max lg:mt-auto w-max ml-auto">

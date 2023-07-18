@@ -14,7 +14,7 @@ export const Application = () => {
           <div className="lg:flex-auto lg:w-1/2 lg:my-auto w-[80%] mx-auto lg:mx-0 pt-10 lg:pt-0">
             <div className="lg:px-[6.5%]">
               <h4 className="leading-none text-[#050931] tracking-[0rem] lg:text-[3.4rem] text-[2.5rem] max-[639px]:text-[30px] md:text-[40px] max-lg:text-center">
-                <span className="font-thin">Bube search algorithm chooses</span>
+                <span className="font-thin">Upward search algorithm chooses</span>
                 <span className="font-medium"> from 5,000+ artisans.</span>
               </h4>
               <p className="text-[#8B939A] lg:text-[1.1rem] text-[1rem] lg:my-[5%] pt-5 lg:pt-0 max-lg:text-center">
