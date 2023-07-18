@@ -30,7 +30,7 @@ const InputContainer = ({ title, desc, children }: any) => (
 );
 
 export const CreateServiceCard = () => {
-  const userId = Number(getCookie("userID"))
+  const userId = Number(getCookie("NewUserId"))
   const [categories, setCategories] = useState([]);
   const [joblevels, setJoblevels] = useState([]);
   const [jobtypes, setJobtypes] = useState([]);

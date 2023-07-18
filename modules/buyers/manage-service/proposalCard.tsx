@@ -15,7 +15,7 @@ export const ProposalCard = ({ data, jobId }: any) => {
   const router = useRouter();
 
   const handlerMessage = async () => {
-    const userId = Number(getCookie("userID"));
+    const userId = Number(getCookie("NewUserId"));
     axios.post("/api/rooms/create", {
       userId,
       jobId: jobId,

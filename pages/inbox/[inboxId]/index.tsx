@@ -12,7 +12,7 @@ import { getCookie } from "cookies-next";
 import { pusherClient, pusherEvents } from "../../../utils/pusher";
 
 const InboxId: NextPageWithLayout = () => {
-  const userId = Number(getCookie("userID"))
+  const userId = Number(getCookie("NewUserId"))
   const router = useRouter();
   const roomId = router.query.inboxId
   const [RoomId, setRoomId] = useState<any>(roomId);

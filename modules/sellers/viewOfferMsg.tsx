@@ -7,7 +7,7 @@ import pImg from "../../public/images/p-5.png";
 import ApiService from "../../services/ApiService";
 
 export const ViewOfferMsg = ({ owner, viewOfferFlg }: any) => {
-  const userId = Number(getCookie("userID"));
+  const userId = Number(getCookie("NewUserId"));
   const router = useRouter();
   const [RoomId, setRoomId] = useState<any>();
   const [flg, setFlg] = useState<any>(false);

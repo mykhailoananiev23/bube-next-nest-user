@@ -20,7 +20,7 @@ const GigListModal = ({ visible, onClose }: any) => {
 
   const router = useRouter()
   const roomId = router.query.inboxId
-  const userId = Number(getCookie("userID"))
+  const userId = Number(getCookie("NewUserId"))
 
   const createOfferApi = async () => {
     await axios.post("/api/offer/create", {

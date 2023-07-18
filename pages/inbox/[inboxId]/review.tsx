@@ -22,7 +22,7 @@ import { getCookie } from "cookies-next";
 import axios from "axios";
 
 const ReviewPage: NextPageWithLayout = () => {
-  const userId = Number(getCookie("userID"))
+  const userId = Number(getCookie("NewUserId"))
   const router = useRouter()
   const [RoomId, setRoomId] = useState<any>(router.query.inboxId)
   const [ReviewModalFlg, setReviewModalFlg] =useState(false)

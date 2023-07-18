@@ -31,7 +31,7 @@ const InputContainer = ({ title, desc, children }: any) => (
 );
 
 export const CreateGigCard = () => {
-  const userId = Number(getCookie("userID"))
+  const userId = Number(getCookie("NewUserId"))
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(0);
   const [subcategories, setSubcategories] = useState([]);

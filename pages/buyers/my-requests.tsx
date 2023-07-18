@@ -17,7 +17,7 @@ import { getCookie } from "cookies-next";
 
 const MyRequests: NextPageWithLayout = () => {
   const [activeTabId, setactiveTabId] = useState(1);
-  const userId = Number(getCookie("userID"));
+  const userId = Number(getCookie("NewUserId"));
 
   const [{ queryPageIndex, queryPageSize }, dispatch] = React.useReducer(
     reducer,

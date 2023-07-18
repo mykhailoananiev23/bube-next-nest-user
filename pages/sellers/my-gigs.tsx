@@ -11,7 +11,7 @@ import ApiService from "../../services/ApiService";
 import { NextPageWithLayout } from "../_app";
 
 const MyGigs: NextPageWithLayout = () => {
-  const userId = Number(getCookie("userID"))
+  const userId = Number(getCookie("NewUserId"))
   const { data: gigsData, refetch } = useQuery(["gig", userId], () =>
     ApiService.getData({ url: `gigs/fetch?userId=${userId}` })
   );

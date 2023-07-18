@@ -26,7 +26,7 @@ const GigsList: NextPageWithLayout = () => {
     { keepPreviousData: true, staleTime: 60000, enabled: !!userEmail }
   );
 
-  const userId = Number(getCookie("userID"));
+  const userId = Number(getCookie("NewUserId"));
 
   const { data: gigsData } = useQuery(
     ["gig", userId],

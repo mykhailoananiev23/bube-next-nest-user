@@ -32,7 +32,7 @@ const Gigs: NextPageWithLayout = () => {
   }
 
   useEffect(() => {
-    const userId = Number(getCookie("userID"))
+    const userId = Number(getCookie("NewUserId"))
     getUserInfo(userId)
   }, []);
   

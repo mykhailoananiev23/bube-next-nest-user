@@ -21,7 +21,7 @@ import { NotificationContext } from "../../contexts/notificationContext";
 
 export default function ConversationComponent() {
   const {setStt} = useContext(NotificationContext)
-  const userId = Number(getCookie("userID"));
+  const userId = Number(getCookie("NewUserId"));
   const router = useRouter();
   const bottomRef = useRef<HTMLDivElement>(null);
 

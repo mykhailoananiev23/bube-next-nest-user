@@ -24,7 +24,7 @@ import calcReviewMarks from "../../utils/getReviewMark";
 const moment = require('moment')
 
 const GigPreview: NextPageWithLayout = () => {
-  const userId = Number(getCookie("userID"))
+  const userId = Number(getCookie("NewUserId"))
   const router = useRouter();
   const [gigId, setGigId] = useState(router.query.id);
   const inputRef = useRef<HTMLInputElement>(null);

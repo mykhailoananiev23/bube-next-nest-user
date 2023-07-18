@@ -12,13 +12,13 @@ import { getCookie } from "cookies-next";
 const moment = require('moment')
 
 const Inbox: NextPageWithLayout = () => {
-  const userId = Number(getCookie("userID"));
+  const userId = Number(getCookie("NewUserId"));
   const router = useRouter();
   const [RoomUsers, setRoomUsers] = useState<any>([]);
 
   const getRoomUsers = async (id: string, no: number) => {
     const res = await ApiService.getData({
-      url: `/rooms/findAll?${id}=${Number(getCookie("userID"))}&c=${no}`,
+      url: `/rooms/findAll?${id}=${userId}&c=${no}`,
     });
     setRoomUsers(res);
   };

@@ -58,7 +58,7 @@ const InboxUserList = ({ data }: any) => {
 };
 
 export const InboxDropDown = () => {
-  const userId = Number(getCookie("userID"));
+  const userId = Number(getCookie("NewUserId"));
   const { Stt } = useContext(NotificationContext);
   const router = useRouter();
   const [NewMessage, setNewMessage] = useState<any>([]);

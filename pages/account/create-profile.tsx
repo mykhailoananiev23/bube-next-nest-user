@@ -12,7 +12,7 @@ import { useSession } from "next-auth/react";
 import { getCookie } from "cookies-next";
 
 const CreateProfile:NextPageWithLayout = () => {
-  const userId = Number(getCookie("userID"))
+  const userId = Number(getCookie("NewUserId"))
   const [country, setCountry] = useState(null);
   const [UserInfo, setUserInfo] = useState<any>();
   const [IsLoading, setIsLoading] = useState(true);

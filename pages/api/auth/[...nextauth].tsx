@@ -6,7 +6,6 @@ import GoogleProvider from "next-auth/providers/google";
 import FacebookProvider from "next-auth/providers/facebook";
 import ApiService from "../../../services/ApiService";
 import notify from "../../../utils/toast";
-import { setCookie } from "cookies-next";
 
 export interface Credentials {
   username: string;
@@ -109,7 +108,6 @@ export const authOptions: NextAuthOptions = {
         const url: string = `users/sign-up`;
         try {
           const response: any = await ApiService.postData({ url, data });
-          setCookie("newUserID", 0)
           if (!response) {
             throw new Error("Server is failed");
           }

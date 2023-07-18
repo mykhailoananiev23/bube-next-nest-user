@@ -20,7 +20,7 @@ export default function ReviewModal({
   whom,
 }: any) {
   const router = useRouter();
-  const userId = Number(getCookie("userID"));
+  const userId = Number(getCookie("NewUserId"));
   const roomId = router.query.inboxId;
   const [Communication, setCommunication] = useState(0);
   const [Cooperation, setCooperation] = useState(0);

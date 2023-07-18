@@ -19,7 +19,7 @@ import { AccountLayout } from "../../components/layout/AccountLayout";
 import { getCookie } from "cookies-next";
 
 const Editprofile: NextPageWithLayout= () => {
-  const userId = Number(getCookie("userID"))
+  const userId = Number(getCookie("NewUserId"))
 
   const { data: userProfileData } = useQuery(
     ["profile", userId],

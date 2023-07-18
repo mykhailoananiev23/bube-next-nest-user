@@ -28,7 +28,7 @@ const InputContainer = ({ title, desc, children }: any) => (
 );
 
 export const CreateProposalCard = () => {
-  const userId = Number(getCookie("userID"))
+  const userId = Number(getCookie("NewUserId"))
   const [uploadedFiles, setUploadedFiles] = useState([]);
   const fileInputRef = useRef<any>(null);
   const router = useRouter();

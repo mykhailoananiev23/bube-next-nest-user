@@ -11,7 +11,7 @@ import { Loading } from "../../components/loading/loading";
 const moment = require('moment')
 
 const Proposals: NextPageWithLayout = () => {
-  const userId = Number(getCookie("userID"));
+  const userId = Number(getCookie("NewUserId"));
   const [IsLoading, setIsLoading] = useState(true);
   const [proposals, setProposal] = useState([]);
 
