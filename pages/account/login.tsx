@@ -21,6 +21,8 @@ export default function Login() {
   const router = useRouter();
   useEffect(() => {
     console.log(process.env.BACKEND_URL)
+    console.log(process.env.NEXT_JWT_SECRET)
+    console.log(process.env.NEXT_PUBLIC_TOKEN)
   }, []);
   async function handleSubmit(values: any, { setSubmitting }: any) {
     const res: any = await signIn("credentials", {
