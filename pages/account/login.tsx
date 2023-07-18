@@ -13,11 +13,15 @@ import { Layout } from "../../components/layout";
 import CheckboxField from "../../components/checkbox";
 import ApiService from "../../services/ApiService";
 import { setCookie } from "cookies-next";
+import { useEffect } from "react";
 
 const frontedURL = process.env.FRONTEND_URL || "http://localhost:3000";
 
 export default function Login() {
   const router = useRouter();
+  useEffect(() => {
+    console.log(process.env.BACKEND_URL)
+  }, []);
   async function handleSubmit(values: any, { setSubmitting }: any) {
     const res: any = await signIn("credentials", {
       username: values.email,
