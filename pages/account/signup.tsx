@@ -57,7 +57,7 @@ export default function Signup() {
     <div className="flex justify-center bg-[#F6F7FB] h-full border">
       <ToastContainer />
       <div className={"container mx-auto flex justify-center"}>
-        <div className="my-20 bg-white rounded-2xl w-[90%] md:w-[66%] lg:w-[50%] lg:w-[40%] p-5 md:p-12">
+        <div className="my-20 bg-white rounded-2xl w-[90%] md:w-[66%] lg:w-[50%] p-5 md:p-12">
           <div className={"py-2"}>
             <h1 className="text-center leading-normal text-black decoration-4 font-inter font-medium text-4xl my-2 max-[639px]:text-[30px] md:text-[40px] max-[639px]:text-center">
               Create an Account
@@ -116,7 +116,7 @@ export default function Signup() {
                     Sign Up
                   </button>
                   <p className="text-center text-[#8B939A] text-[1rem] mx-2 mb-8">
-                    By Signing Up You are agree to Bube Terms of Service as well
+                    By Signing Up You are agree to Upward Terms of Service as well
                     to receive occasional emails from us.
                   </p>
                   <hr className="my-6" />

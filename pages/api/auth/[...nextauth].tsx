@@ -109,7 +109,6 @@ export const authOptions: NextAuthOptions = {
         const url: string = `users/sign-up`;
         try {
           const response: any = await ApiService.postData({ url, data });
-          console.log(response)
           setCookie("newUserID", 0)
           if (!response) {
             throw new Error("Server is failed");

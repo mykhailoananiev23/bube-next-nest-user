@@ -169,7 +169,7 @@ export const GigSection = () => {
                             "https://api.uifaces.co/our-content/donated/FJkauyEa.jpg"
                           }
                           href={item.id}
-                          authorName={item.user.firstName}
+                          // authorName={item.user.firstName}
                           img={
                             "https://images.unsplash.com/photo-1620287341056-49a2f1ab2fdc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
                           }
