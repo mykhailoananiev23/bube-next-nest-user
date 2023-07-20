@@ -10,23 +10,26 @@ import { useQuery } from "@tanstack/react-query";
 import { ToastContainer } from "react-toastify";
 import { useSession } from "next-auth/react";
 import { Loading } from "../../components/loading/loading";
-import { getCookie } from "cookies-next";
+import { getCookie, setCookie } from "cookies-next";
 
 const Gigs: NextPageWithLayout = () => {
   const [UserData, setUserData] = useState<any>({firstName: ""});
   const [IsLoading, setIsLoading] = useState(true);
+  const {data: session} = useSession();
+  const userEmail = session?.user?.email
 
-  // const { data: userData, isLoading } = useQuery(
-  //   ["user", userEmail],
-  //   () => ApiService.getData({ url: `users/${userEmail}` }),
-  //   {
-  //     keepPreviousData: true,
-  //     staleTime: 60000,
-  //     enabled: !!userEmail,
-  //   }
-  // );
+  const { data: userData, isLoading } = useQuery(
+    ["user", userEmail],
+    () => ApiService.getData({ url: `users/${userEmail}` }),
+    {
+      keepPreviousData: true,
+      staleTime: 60000,
+      enabled: !!userEmail,
+    }
+  );
   const getUserInfo = async (id: number) => {
     const res = await ApiService.getData({ url: `users/getById/${id}` })
+    setCookie("UserInfo", JSON.stringify(res))
     setUserData(res)
     res && setIsLoading(false)
   }

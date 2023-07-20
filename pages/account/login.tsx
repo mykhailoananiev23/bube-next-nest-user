@@ -58,7 +58,7 @@ export default function Login() {
         <div className="my-20 bg-white rounded-2xl w-[90%] md:w-[66%] lg:w-[40%] xl:w-[33%] p-5 md:p-12">
           <div className={"py-2"}>
             <h1 className="text-center leading-normal text-black decoration-4 font-inter font-medium text-4xl my-2 max-[639px]:text-[30px] md:text-[40px] max-[639px]:text-center">
-              Sign In To Upward
+              Sign In To BuBe
             </h1>
 
             <div className="flex-col justify-center">

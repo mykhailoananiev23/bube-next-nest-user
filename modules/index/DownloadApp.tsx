@@ -12,7 +12,7 @@ export const DownloadApp = () => {
                 Become an artisan
                 </p>
                 <p className="text-[#050931] lg:text-[2.9rem] text-[1.8rem] lg:mb-3 mb-2">
-                <span className="font-thin">Get started with Upward,</span>
+                <span className="font-thin">Get started with BuBe,</span>
                 <span className="font-medium">Download App</span>
                 </p>
                 <p className="text-[#050931] lg:text-[1.5rem] text-[1.2rem] font-light">

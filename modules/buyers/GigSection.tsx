@@ -15,7 +15,7 @@ export const GigSection = () => {
   const [favorGigs, setFavorGigs] = useState<any>([]);
   
   const fetchFavor = async () => {
-    const userId = await getCookie("userID");
+    const userId = Number(getCookie("NewUserId"));
     const url = `/favourites/fetch?userId=${userId}&type=gig`;
     const response = await ApiService.getData({ url });
     setFavorGigs(response);

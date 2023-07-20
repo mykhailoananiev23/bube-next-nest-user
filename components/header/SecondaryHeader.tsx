@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-// import Logo from "../../public/images/logo.svg";
+import Logo from "../../public/images/logo.svg";
 
 export const SecondaryHeader = () => {
   return (
@@ -10,12 +10,12 @@ export const SecondaryHeader = () => {
           <div className="flex justify-between items-center">
             <Link href="/">
               <a className="w-[10rem]">
-                LOGO
-                {/* <Image
+                {/* LOGO */}
+                <Image
                   src={Logo}
                   className="w-3/4 h-auto object-center m-auto"
-                  alt={"Upward"}
-                /> */}
+                  alt={"BuBe"}
+                />
               </a>
             </Link>
           </div>

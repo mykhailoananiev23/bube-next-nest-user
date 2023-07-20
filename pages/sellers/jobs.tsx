@@ -97,7 +97,7 @@ const Jobs: NextPageWithLayout = () => {
         </div>
         <div className="m-8 md:ml-8 bg-white sm:pl-0 rounded-xl md:w-1/3 w-[90%] mx-auto h-full">
           <ProCard
-            userId={Number(getCookie("userID"))}
+            userId={Number(getCookie("NewUserId"))}
             type=""
             showMethod={1}
           />

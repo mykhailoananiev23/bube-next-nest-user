@@ -8,6 +8,7 @@ import { SessionProvider } from "next-auth/react";
 import SearchWordProvider from "../contexts/searchwordContext";
 import NotificationProvider from "../contexts/notificationContext";
 import LanguageContextProvider from "../contexts/languageContext";
+import { ThemeProvider } from "@material-tailwind/react";
 
 const queryClient = new QueryClient();
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
@@ -23,19 +24,21 @@ export default function MyApp(
 ) {
   const getLayout = Component.getLayout ?? ((page: ReactElement) => page);
   return (
-    <QueryClientProvider client={queryClient}>
-      <SessionProvider session={session}>
-        <NotificationProvider>
-          <LanguageContextProvider>
-            <SearchWordProvider>
-              <main className="min-h-screen">
-                {getLayout(<Component {...pageProps} />)}
-              </main>
-            </SearchWordProvider>
-          </LanguageContextProvider>
-        </NotificationProvider>
-      </SessionProvider>
-      <ReactQueryDevtools initialIsOpen={false} />
-    </QueryClientProvider>
+    <ThemeProvider>
+      <QueryClientProvider client={queryClient}>
+        <SessionProvider session={session}>
+          <NotificationProvider>
+            <LanguageContextProvider>
+              <SearchWordProvider>
+                <main className="min-h-screen">
+                  {getLayout(<Component {...pageProps} />)}
+                </main>
+              </SearchWordProvider>
+            </LanguageContextProvider>
+          </NotificationProvider>
+        </SessionProvider>
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
+    </ThemeProvider>
   );
 }

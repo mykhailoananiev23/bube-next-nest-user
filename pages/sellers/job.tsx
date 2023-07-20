@@ -18,8 +18,11 @@ import ApiService from "../../services/ApiService";
 import { useQuery } from "@tanstack/react-query";
 import { Job } from "../../types/jobs"
 import { UserInfoCard } from "../../modules/aboutClient";
+import { getCookie } from "cookies-next";
+import notify from "../../utils/toast";
 
 const Job: NextPageWithLayout = () => {
+  const userId = getCookie("NewUserId")
   const [job, setJob] = useState<any>();
   const router = useRouter()
   const [id, setId] = useState(router.query.id);

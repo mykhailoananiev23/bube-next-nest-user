@@ -116,7 +116,7 @@ export default function Signup() {
                     Sign Up
                   </button>
                   <p className="text-center text-[#8B939A] text-[1rem] mx-2 mb-8">
-                    By Signing Up You are agree to Upward Terms of Service as well
+                    By Signing Up You are agree to BuBe Terms of Service as well
                     to receive occasional emails from us.
                   </p>
                   <hr className="my-6" />

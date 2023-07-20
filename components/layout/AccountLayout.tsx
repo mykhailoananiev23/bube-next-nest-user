@@ -10,6 +10,7 @@ import { useQuery } from "@tanstack/react-query";
 import { GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import { ToastContainer } from "react-toastify";
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const session = await getSession(context);
@@ -99,8 +100,8 @@ export const AccountLayout = ({ children }: LayoutProps) => {
 
   useEffect(() => {
     if(NewPath !== OldPath){
-      const id = Number(getNewUserId(session))
-      id && getProfileId(id);
+      getNewUserId(session)
+      getProfileId(NewUserId);
     }
   }, [session, NewPath]);
 
@@ -122,9 +123,10 @@ export const AccountLayout = ({ children }: LayoutProps) => {
   } else {
     return (
       <div className="bg-[#F6F7FB] max-w-full overflow-x-hidden">
+        <ToastContainer />
         <AccountHeader />
         {children}
-        {!router.pathname.startsWith("/inbox") && <MainFooter />}
+        {!router.pathname.startsWith("/inbox") && !router.pathname.startsWith("/support") && <MainFooter />}
       </div>
     );
   }

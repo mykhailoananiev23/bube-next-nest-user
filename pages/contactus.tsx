@@ -12,14 +12,11 @@ import { Tickets } from "../types/tickets";
 import MyPagination from "../utils/pagination";
 import { PAGE_CHANGED, initialState, reducer } from "../utils/paginationHelper";
 import { Loading } from "../components/loading/loading";
-
-interface localuser {
-  id: number;
-  name: string;
-}
+import { getCookie } from "cookies-next";
+import ReviewModal from "../components/modal/ReviewModal";
 
 const ContactUs: NextPageWithLayout = () => {
-  const [userData, setUserData] = useState<localuser>();
+  const userId = Number(getCookie("NewUserId"))
   const [ticketData, setTicketsData] = useState<Tickets[]>([]);
   const [status, setStatus] = useState("");
   const [paginationKey, setpaginationkey] = useState(0);
@@ -27,11 +24,11 @@ const ContactUs: NextPageWithLayout = () => {
     reducer,
     initialState
   );
-
+  const [ReviewModalFlg, setReviewModalFlg] =useState(false)
   useEffect(() => {
     const storedData = localStorage.getItem("user");
     if (storedData) {
-      setUserData(JSON.parse(storedData));
+
     }
   }, []);
 
@@ -39,17 +36,17 @@ const ContactUs: NextPageWithLayout = () => {
     const res = await ApiService.getData({
       url:
         fetchurl +
-        `?userId=${userData?.id}&status=${status}&perpage=10&page=${page}`,
+        `?userId=${userId}`,
     });
     return res;
   };
   const { isLoading, error, data, refetch } = useQuery(
-    ["tickets-list", userData?.id, queryPageIndex, status],
-    () => getData(queryPageIndex, "tickets/fetch"),
+    ["tickets-list", userId, queryPageIndex, status],
+    () => getData(queryPageIndex, "dispute/fetch"),
     {
-      enabled: !!userData?.id,
+      enabled: !!userId,
       keepPreviousData: false,
-      onSuccess: (res) => setTicketsData(res.data as Tickets[]),
+      onSuccess: (res) => setTicketsData(res as Tickets[]),
     }
   );
   
@@ -96,9 +93,9 @@ const ContactUs: NextPageWithLayout = () => {
     <>
       <HeroSection children={heroBody} />
       <section className="leading-relaxed mt-8 mb-8 mx-auto px-2 lg:px-8  space-y-2 flex flex-col content-center">
-        {/*<ContactUsBody ticketData={ticketData} userId={userData?.id} onmodalClose={refetchData} statusFilter={handleStatusChange} />*/}
+        {/*<ContactUsBody ticketData={ticketData} userId={userId} onmodalClose={refetchData} statusFilter={handleStatusChange} />*/}
         <ContactUsBody
-          ticketData={ticketData}
+          ticketData={data}
           userId={1}
           onmodalClose={refetchData}
           statusFilter={handleStatusChange}
@@ -112,9 +109,9 @@ const ContactUs: NextPageWithLayout = () => {
     </>
   );
 
-  if (isLoading) {
-    return <Loading title="Loading... contact us" />;
-  }
+  // if (isLoading) {
+  //   return <Loading title="Loading... contact us" />;
+  // }
 
   return <MainBody children={mainChildren} />;
 };

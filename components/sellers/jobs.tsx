@@ -19,7 +19,6 @@ import { SearchWordContext } from "../../contexts/searchwordContext";
 
 const MyJobs = ({ filterJob }: any) => {
   const {query} = useContext(SearchWordContext)
-  const userId = getCookie("profileId");
   const [endPagi, setEndPagi] = useState(1);
   const [{ queryPageIndex, queryPageSize }, dispatch] = React.useReducer(
     reducer,
@@ -39,7 +38,7 @@ const MyJobs = ({ filterJob }: any) => {
 
   const { isLoading, error, data, refetch } = useQuery(
     ["Jobs", queryPageIndex, queryPageSize],
-    () => getData(queryPageIndex, `requests/fetch`),
+    () => getData(queryPageIndex, `requests/fetch?&`),
     {
       keepPreviousData: true,
       staleTime: 60000,
@@ -79,7 +78,6 @@ const MyJobs = ({ filterJob }: any) => {
 
     dispatch({ type: PAGE_CHANGED, payload: page.selected + 1 });
   };
-  const [currentPage] = useState(0);
 
   if (isLoading) {
     return <JobsLoader />;

@@ -13,26 +13,6 @@ export const ActiveJobCard = ({ item, favorJobs, refetch, status }: any) => {
   const [applyFlg, setApplyFlg] = useState(true);
   const userId: any = getCookie("userID");
 
-  const fetchProposal = async () => {
-    const url = `/proposal/fetch?id=${item.id}&userId=${userId}`
-    const res = await ApiService.getData({url})
-    if(res.data.length > 0){
-      setApplyFlg(false)
-    }
-  }
-
-  useEffect(()=> {
-    fetchProposal()
-    const FavorJobsIds = favorJobs.map((ele:any) => { return ele.targetId})
-    favorJobs.map((ele:any) => {
-      if(ele.targetId === item.id){
-        setFavorId(ele.id)
-      }
-    })
-    const flg = FavorJobsIds.includes(item.id)
-    setSelFavour(flg)
-  },[])
-
   const handleFavour = async () => {
     var url, res, dt;
     if (selFavour) {

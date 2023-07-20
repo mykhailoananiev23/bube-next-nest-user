@@ -4,6 +4,7 @@ import { Tickets } from "../../types/tickets";
 import { TimeAgo } from "../../components/timeago";
 import Modal from "../../components/modal/Modal";
 import RequestAdd from "./RequestAdd";
+import { useRouter } from "next/router";
 
 interface ContactUsBodyProps {
   ticketData: Tickets[];
@@ -12,7 +13,8 @@ interface ContactUsBodyProps {
   statusFilter: (event:string) => void;
 }
   
-export default function ContactUsBody({ ticketData, userId, onmodalClose, statusFilter }: ContactUsBodyProps) {
+export default function ContactUsBody({ ticketData, userId, onmodalClose, statusFilter }: any) {
+  const router = useRouter()
   const [showRequestModal, setRequestModal] = useState(false);
   useEffect(() => {
     if (showRequestModal === false) {
@@ -26,6 +28,15 @@ export default function ContactUsBody({ ticketData, userId, onmodalClose, status
 
   const handleStatusChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     statusFilter(event.target.value);
+  }
+
+  const gotoInbox = (id: number) => {
+    router.push({
+      pathname: "/support",
+      query: {
+        supId: id
+      }
+    })
   }
 
   return (
@@ -102,25 +113,32 @@ export default function ContactUsBody({ ticketData, userId, onmodalClose, status
                     </th>
                   </tr>
                 </thead>
-                {ticketData?.map((ticket) => (
+                {ticketData?.map((ticket: any) => (
                   <tbody key={ticket.id} className="divide-y divide-gray-200 bg-white">
                     <tr>
                       <td className="whitespace-nowrap border-r-2 border-[#eaeaeb] py-4 pl-4 pr-3 text-sm font-medium text-[#91989f] sm:pl-6">
                         {ticket.id}
                       </td>
                       <td className="whitespace-nowrap border-r-2 border-[#eaeaeb] px-3 py-4 text-sm text-[#91989f]">
-                        {ticket.subject}
+                        {ticket.job.title}
                       </td>
                       <td className="whitespace-nowrap border-r-2 border-[#eaeaeb] px-3 py-4 text-sm text-[#91989f]">
                          <TimeAgo datetime={ticket.createdAt} />
                       </td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-[#91989f]">
-                        <div className="flex items-center">
-                          <div className="rounded-full bg-[#0071bc26] flex-col text-base">
+                        <div className="flex items-center space-x-2">
+                          <div className="rounded-full bg-[#0071bc26] text-base">
                             <p className={`uppercase mx-4 my-2 font-medium ${ticket.status === 'solved' ? 'text-[#66db48]':'text-[#0071BC]'}`}>
-                              {ticket.status}
+                              {ticket.status ? "Solved" : "InProgress"}
                             </p>
                           </div>
+                            {
+                              ticket.status ? null : (
+                          <div className="rounded-full bg-[#0071bc26] text-base">
+                              <div className="mx-4 my-2" onClick={() => gotoInbox(ticket.id)}>Chat</div>
+                          </div>
+                              )
+                            }
                         </div>
                       </td>
                     </tr>

@@ -2,7 +2,7 @@ import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import React, { useState, useRef, useEffect } from "react";
-// import Logo from "../../public/images/logo.svg";
+import Logo from "../../public/images/logo.svg";
 import Link from "next/link";
 
 export const MainHeader = () => {
@@ -33,12 +33,12 @@ export const MainHeader = () => {
           <div className="flex justify-between items-center">
             <Link href="/">
               <a className="w-[10rem]">
-                LOGO
-                {/* <Image
+                {/* LOGO */}
+                <Image
                   src={Logo}
                   className="w-3/4 h-auto object-center m-auto"
-                  alt={"Upward"}
-                /> */}
+                  alt={"BuBe"}
+                />
               </a>
             </Link>
             {showSidebar ? (
