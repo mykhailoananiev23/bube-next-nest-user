@@ -12,10 +12,11 @@ export default function JobCard({
   jobType,
   createdAt,
   expectedDeliveryTime,
+  data
 }: any) {
   const [height, setHeight] = useState("auto");
-
-  function handleChange(event:any) {
+  console.log(data)
+  function handleChange(event: any) {
     setHeight(`${event.target.scrollHeight}px`);
   }
   return (
@@ -46,9 +47,7 @@ export default function JobCard({
             style={{ height }}
             onInput={handleChange}
             value={description}
-          >
-            
-          </textarea>
+          ></textarea>
         </div>
         <hr className="my-5" />
         <h2 className="text-xl">
@@ -59,6 +58,16 @@ export default function JobCard({
         <h2 className="text-xl pb-5 font-medium text-darkText">
           Skills And Expertise
         </h2>
+        <div className="mt-5">
+          {data?.skill?.map((skill: { id: number; name: string }) => (
+            <div
+              key={skill.id}
+              className="inline-block bg-gray-200 text-black font-bold px-2 py-1 rounded-full mr-2 mb-2"
+            >
+              {skill.name}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

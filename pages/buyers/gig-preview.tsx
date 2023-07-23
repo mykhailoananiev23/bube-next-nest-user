@@ -225,7 +225,7 @@ const GigPreview: NextPageWithLayout = () => {
             />
           </div>
           <div className="text-center mt-6 p-2">
-            <h2 className="text-[#050931] text-2xl font-medium">{`${gigData?.user.firstName} ${gigData?.user.lastName}`}</h2>
+            <h2 className="text-[#050931] text-2xl font-medium">{`${gigData?.user?.firstName} ${gigData?.user?.lastName}`}</h2>
           </div>
           <div className="flex text-center justify-center">
             <span className="flex">

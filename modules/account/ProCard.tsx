@@ -16,7 +16,7 @@ const pOne = require("../../public/images/p-1.png");
 
 export const ProCard = (data: ProCardProps) => {
   const router = useRouter();
-  const [UserId, setUserId] = useState<number>();
+  const [UserId, setUserId] = useState<number>(data.userId);
   const [Type, setType] = useState<string>();
   const [ShowMethod, setShowMethod] = useState<number>();
   const [UserInfo, setUserInfo] = useState<any>();
@@ -32,7 +32,7 @@ export const ProCard = (data: ProCardProps) => {
   };
 
   useEffect(() => {
-    fetchReviewHistoryByUserId(Number(router.query.id));
+    fetchReviewHistoryByUserId(Number(router.query.id) || UserId);
   }, [router.query]);
 
   useEffect(() => {
@@ -42,8 +42,9 @@ export const ProCard = (data: ProCardProps) => {
 
   const getUserInfo = async (id: number) => {
     const res = await ApiService.getData({
-      url: `/user-profile/fetch?&userId=${id}`,
+      url: `/user-profile/fetch?&userId=${id || UserId}`,
     });
+    console.log(res.data[0])
     setProfileMarks(calcProfileMarks(res.data[0]));
     setUserInfo(res.data[0]);
   };

@@ -12,9 +12,9 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
 
-export async function getServerSideProps(context: GetServerSidePropsContext) {
+export async function getInitialProps(context: GetServerSidePropsContext) {
   const session = await getSession(context);
-
+  console.log(session);
   if (!session) {
     return {
       redirect: {
@@ -44,90 +44,90 @@ export const AccountLayout = ({ children }: LayoutProps) => {
   const { data: session, status } = useSession();
   const [IsLoading, setIsLoading] = useState(false);
   const oldUserId = Number(getCookie("userID"));
-  const oldProfileId = Number(getCookie("profileId"))
-  const NewUserId = Number(getCookie("NewUserId"))
+  const oldProfileId = Number(getCookie("profileId"));
+  const NewUserId = Number(getCookie("NewUserId"));
 
   const getNewUserId = async (session: any) => {
-    if(session?.user?.email && (router.pathname === "/buyers")){
-      if(oldUserId !== NewUserId){
-        setIsLoading(true)
+    if (session?.user?.email && router.pathname === "/buyers") {
+      if (oldUserId !== NewUserId) {
+        setIsLoading(true);
         const UserInfo = await ApiService.getData({
           url: `/users/${session.user.email}`,
         });
         const newUserId = UserInfo.id;
-        if(newUserId === oldUserId){
-          setIsLoading(false)
+        if (newUserId === oldUserId) {
+          setIsLoading(false);
           return null;
         } else {
           setCookie("userID", newUserId, {
             maxAge: 60 * 60 * 24 * 7,
             path: "/",
-          })
+          });
           setCookie("NewUserId", newUserId, {
             maxAge: 60 * 60 * 24 * 7,
             path: "/",
-          })
-          return newUserId; 
+          });
+          return newUserId;
         }
       }
     }
     return null;
-  }
+  };
 
-  const getProfileId = async (id:number) => {
-    if(router.pathname !== "/account/create-profile"){
-      if((router.asPath.startsWith("/sellers")) && (!oldProfileId || (id !== oldProfileId))){
+  const getProfileId = async (id: number) => {
+    if (router.pathname !== "/account/create-profile") {
+      if (
+        router.asPath.startsWith("/sellers") &&
+        (!oldProfileId || id !== oldProfileId)
+      ) {
         const res = await ApiService.getData({
           url: `user-profile/fetch?userId=${id}`,
         });
         const newProfileId = res?.data?.[0]?.user?.id;
-        if(id !== newProfileId){
-          setIsLoading(false)
-          router.push('/account/create-profile')
+        if (id !== newProfileId) {
+          setIsLoading(false);
+          router.push("/account/create-profile");
         } else {
           setCookie("userID", newProfileId, {
             maxAge: 60 * 60 * 24 * 7,
             path: "/",
-          })
-          setIsLoading(false)
+          });
+          setIsLoading(false);
         }
       }
     }
-  }
+  };
 
   const [NewPath, setNewPath] = useState<any>();
   const [OldPath, setOldPath] = useState();
 
   useEffect(() => {
-    if(NewPath !== OldPath){
-      getNewUserId(session)
+    if (NewPath !== OldPath) {
+      getNewUserId(session);
       getProfileId(NewUserId);
     }
   }, [session, NewPath]);
 
   useEffect(() => {
-    setOldPath(NewPath)
-    setNewPath(router.pathname)
+    setOldPath(NewPath);
+    setNewPath(router.pathname);
   }, [router.pathname]);
 
   if (status === "unauthenticated") {
     router.push("/account/login");
   }
 
-  if (!session) {
-    return <Loading title="Check Authorization..." />;
-  }
-
-  if (IsLoading) {
-    return <Loading title="Check AccountLayout..." />;
-  } else {
+  if (status === "authenticated") {
     return (
       <div className="bg-[#F6F7FB] max-w-full overflow-x-hidden">
         <ToastContainer />
         <AccountHeader />
         {children}
-        {!router.pathname.startsWith("/inbox") && !router.pathname.startsWith("/support") && <MainFooter />}
+        {!router.pathname.startsWith("/inbox") &&
+          !router.pathname.startsWith("/support") && <MainFooter />}
       </div>
     );
   }
+
+  return <Loading title="IsLoading..." />;
 };

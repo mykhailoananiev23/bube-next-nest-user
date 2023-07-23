@@ -98,7 +98,7 @@ const Job: NextPageWithLayout = () => {
       </section>
       <section className="lg:flex lg:flex-row  sm:flex sm:justify-center container mx-auto">
         <div className="mr-6 rounded-xl md:w-2/3 w-[90%] mx-auto">
-          <JobCard id={job?.id} category={ job?.category?.id } title={ job?.title } description={ job?.description } price={ job?.price } jobLevel={ job?.jobLevel?.name} jobType={ job?.jobType?.name} createdAt={ job?.createdAt } expectedDeliveryTime={ job?.expectedDeliveryTime} />
+          <JobCard id={job?.id} data={job} category={ job?.category?.id } title={ job?.title } description={ job?.description } price={ job?.price } jobLevel={ job?.jobLevel?.name} jobType={ job?.jobType?.name} createdAt={ job?.createdAt } expectedDeliveryTime={ job?.expectedDeliveryTime} />
         </div>
         <div className="m-8 md:ml-8 bg-white sm:pl-0 rounded-xl md:w-1/3 w-[90%] mx-auto h-full py-8">
           <div className="flex flex-col w-[80%] md:w-[60%] mx-auto">

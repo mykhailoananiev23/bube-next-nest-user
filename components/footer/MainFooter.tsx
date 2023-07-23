@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Logo from "../../public/images/logo.svg";
+// import Logo from "../../public/images/logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookF,
@@ -18,14 +18,14 @@ export const MainFooter = () => {
           <div className="lg:flex-auto lg:w-[40%] lg:my-14  my-2 w-[80%]  mx-auto lg:mx-0">
             <div className="">
               <Link href="/" className="">
-                {/* <a>LOGO</a> */}
-                <>
+                <a>LOGO</a>
+                {/* <>
                   <Image
                     src={Logo}
                     alt={"BuBe"}
                     width={175}
                   />
-                </>
+                </> */}
               </Link>
 
               <p className="text-[#8B939A] text-[0.8rem] capitalize">
