@@ -117,7 +117,7 @@ export const skills = [
   {
     id: 6,
 
-    title: "Typograpghy",
+    title: "Typography",
   },
   {
     id: 7,
